@@ -163,7 +163,7 @@ The following variables are scoped to `#silktide-wrapper` to prevent them from b
 ```
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or fork this repository and submit a pull request.
