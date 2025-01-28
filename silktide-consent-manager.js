@@ -273,7 +273,7 @@ class SilktideCookieBanner {
   getBannerContent() {
     const bannerDescription =
       this.config.text?.banner?.description ||
-      `We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.`;
+      `<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>`;
 
     // Accept button
     const acceptAllButtonText = this.config.text?.banner?.acceptAllButtonText || 'Accept all';
@@ -376,7 +376,7 @@ class SilktideCookieBanner {
     
     const preferencesDescription =
       this.config.text?.preferences?.description ||
-      '<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>';
+      `<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>`;
     
     // Preferences button
     const preferencesButtonLabel = this.config.text?.banner?.preferencesButtonAccessibleLabel;
