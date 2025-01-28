@@ -2,6 +2,8 @@
 
 A free, lightweight and customizable consent manager/cookie banner for websites, designed to help you comply with GDPR and other privacy regulations.
 
+[Learn more](https://silktide.com/consent-manager/) or [Configure it with our wizard](https://silktide.com/consent-manager/install/)
+
 ## Features
 
 - **Customizable Design**: Easily customize the appearance of the banner and modal to match your website's design.
