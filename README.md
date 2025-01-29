@@ -2,6 +2,8 @@
 
 A free, lightweight and customizable consent manager/cookie banner for websites, designed to help you comply with GDPR and other privacy regulations.
 
+[Learn more](https://silktide.com/consent-manager/) or [Configure it with our wizard](https://silktide.com/consent-manager/install/)
+
 ## Features
 
 - **Customizable Design**: Easily customize the appearance of the banner and modal to match your website's design.
@@ -100,48 +102,48 @@ You can either download these files and host them yourself.
 
 The consent manager can be customized using the following configuration options:
 
-### cookieTypes
+### `cookieTypes`
 
 An array of objects defining the different types of cookies. Each object should include:
 
-- **id**: A unique identifier for the cookie type
-- **name**: The name of the cookie type (displayed to the user)
-- **description**: A description of the cookie type (displayed to the user)
-- **required**: Whether the cookie is essential and cannot be rejected
-- **defaultValue**: The default state of the cookie (true for accepted, false for rejected)
-- **onAccept**: A callback function triggered when the cookie is accepted
-- **onReject**: A callback function triggered when the cookie is rejected
+- `id`: A unique identifier for the cookie type
+- `name`: The name of the cookie type (displayed to the user)
+- `description`: A description of the cookie type (displayed to the user)
+- `required`: Whether the cookie is essential and cannot be rejected
+- `defaultValue`: The default state of the cookie (true for accepted, false for rejected)
+- `onAccept`: A callback function triggered when the cookie is accepted
+- `onReject`: A callback function triggered when the cookie is rejected
 
-### text
+### `text`
 
 An object containing text strings used in the banner and preferences modal:
 
-#### banner
-- **description**: Main text content for the banner
-- **acceptAllButtonText**: Text for the accept all button
-- **acceptAllButtonAccessibleLabel**: Accessibility label for accept all button
-- **rejectNonEssentialButtonText**: Text for reject button
-- **rejectNonEssentialButtonAccessibleLabel**: Accessibility label for reject button
-- **preferencesButtonText**: Text for preferences button
-- **preferencesButtonAccessibleLabel**: Accessibility label for preferences button
+#### `banner`
+- `description`: Main text content for the banner
+- `acceptAllButtonText`: Text for the accept all button
+- `acceptAllButtonAccessibleLabel`: Accessibility label for accept all button
+- `rejectNonEssentialButtonText`: Text for reject button
+- `rejectNonEssentialButtonAccessibleLabel`: Accessibility label for reject button
+- `preferencesButtonText`: Text for preferences button
+- `preferencesButtonAccessibleLabel`: Accessibility label for preferences button
 
-#### preferences
-- **title**: Title text for the preferences modal
-- **description**: Description text for the preferences modal
-- **creditLinkText**: Text for the credit link
-- **creditLinkAccessibleLabel**: Accessibility label for credit link
+#### `preferences`
+- `title`: Title text for the preferences modal
+- `description`: Description text for the preferences modal
+- `creditLinkText`: Text for the credit link
+- `creditLinkAccessibleLabel`: Accessibility label for credit link
 
-### position
+### `position`
 
 An object defining the position of the banner and cookie icon:
 
-- **banner**: Position of the banner (options: `bottomRight`, `bottomLeft`, `center`, `bottomCenter`)
-- **cookieIcon**: Position of the cookie icon (options: `bottomRight`, `bottomLeft`)
+- `banner`: Position of the banner (options: `bottomRight`, `bottomLeft`, `center`, `bottomCenter`)
+- `cookieIcon`: Position of the cookie icon (options: `bottomRight`, `bottomLeft`)
 
 ### Callbacks
 
-- **onAcceptAll**: A callback function triggered when the user clicks "Accept All"
-- **onRejectAll**: A callback function triggered when the user clicks "Reject Non-Essential"
+- `onAcceptAll`: A callback function triggered when the user clicks "Accept All"
+- `onRejectAll`: A callback function triggered when the user clicks "Reject Non-Essential"
 
 
 ## Styling
