@@ -385,7 +385,7 @@ class SilktideCookieBanner {
     
     const preferencesDescription =
       this.config.text?.preferences?.description ||
-      '<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>';
+      `<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>`;
     
     // Preferences button
     const preferencesButtonLabel = this.config.text?.banner?.preferencesButtonAccessibleLabel;
@@ -580,9 +580,9 @@ class SilktideCookieBanner {
   }
 
   hideCookieIcon() {
-    //if (this.cookieIcon) {
-    //  this.cookieIcon.style.display = 'none';
-    //}
+    if (this.cookieIcon) {
+      this.cookieIcon.style.display = 'none';
+    }
   }
 
   /**
