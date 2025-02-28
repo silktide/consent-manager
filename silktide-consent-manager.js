@@ -548,6 +548,7 @@ class SilktideCookieBanner {
   createCookieIcon() {
     this.cookieIcon = document.createElement('button');
     this.cookieIcon.id = 'silktide-cookie-icon';
+    this.cookieIcon.title = 'Manage your cookie preferences for this site';
     this.cookieIcon.innerHTML = this.getCookieIconContent();
 
     if (this.config.text?.banner?.preferencesButtonAccessibleLabel) {
