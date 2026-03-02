@@ -9,13 +9,13 @@
 #stcm-wrapper {
   --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
   --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #F9D000;
+  --primaryColor: #f9d000;
   --backgroundColor: #050505;
-  --textColor: #F4F0DF;
+  --textColor: #f4f0df;
   --backdropBackgroundColor: #00000077;
   --backdropBackgroundBlur: 0px;
   --iconColor: #050505;
-  --iconBackgroundColor: #F9D000;
+  --iconBackgroundColor: #f9d000;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -52,7 +52,9 @@ Focus Styles
 #stcm-wrapper #stcm-modal button:focus,
 #stcm-wrapper #stcm-icon:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #ffffff;
+  box-shadow:
+    0 0 0 2px var(--backgroundColor),
+    0 0 0 4px #ffffff;
   border-radius: 5px;
 }
 
@@ -115,7 +117,9 @@ Banner
   opacity: 0;
   animation: stcm-slide-down 350ms ease-out;
   animation-delay: 0.3s;
-  box-shadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  box-shadow:
+    -5px 5px 10px 0px #00000012,
+    0px 0px 50px 0px #0000001a;
 }
 
 #stcm-banner.stcm-loaded {
@@ -239,7 +243,9 @@ Modal
   transform: translate(0px, -20px);
   opacity: 0;
   animation: stcm-slide-up-center 350ms ease-out forwards;
-  box-shadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  box-shadow:
+    -5px 5px 10px 0px #00000012,
+    0px 0px 50px 0px #0000001a;
   font-family: var(--fontFamily);
   color: var(--textColor);
   flex-direction: column;
@@ -333,7 +339,7 @@ Modal - Content
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 24px;  
+  gap: 24px;
 }
 
 /* --------------------------------
@@ -350,7 +356,9 @@ Modal - Switches
 
 #stcm-modal .stcm-toggle:focus-within {
   outline: none;
-  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #ffffff;
+  box-shadow:
+    0 0 0 2px var(--backgroundColor),
+    0 0 0 4px #ffffff;
   border-radius: 25px;
 }
 
@@ -390,7 +398,9 @@ Modal - Switches
   position: absolute;
   top: 5px;
   right: 8px;
-  transition: right 150ms ease-out, opacity 150ms ease-out;
+  transition:
+    right 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 #stcm-modal .stcm-toggle-off {
@@ -560,9 +570,23 @@ Animations
 Animation - backdrop click feedback
 -------------------------------- */
 @keyframes stcm-nudge {
-  0%, 100% { right: 16px; }
-  10%, 30%, 50%, 70%, 90% { right: 20px; }
-  20%, 40%, 60%, 80% { right: 12px; }
+  0%,
+  100% {
+    right: 16px;
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    right: 20px;
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    right: 12px;
+  }
 }
 
 /* Apply to banner */
@@ -581,9 +605,133 @@ Animation - backdrop click feedback
   #stcm-modal.stcm-nudge {
     animation: stcm-pulse 0.5s ease-in-out;
   }
-  
+
   @keyframes stcm-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.85; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+}
+
+/* ================================
+   SOFT-OPTIN & CA-OPTOUT Compact Banners
+   ================================ */
+
+/* Shared compact banner layout */
+#stcm-banner.stcm-banner-soft,
+#stcm-banner.stcm-banner-ca-optout {
+  padding: 16px 24px;
+  width: auto;
+  max-width: calc(100% - 32px);
+}
+
+#stcm-banner.stcm-banner-soft p,
+#stcm-banner.stcm-banner-ca-optout p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Compact row: text + buttons inline */
+.stcm-compact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stcm-compact-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.stcm-compact-text p {
+  margin: 0;
+}
+
+/* Inline actions for compact banners */
+.stcm-actions-inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#stcm-banner.stcm-banner-soft .stcm-button,
+#stcm-banner.stcm-banner-ca-optout .stcm-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+/* Secondary button style */
+.stcm-button-secondary {
+  background-color: transparent;
+  color: var(--textColor);
+  border: 1px solid var(--textColor);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.15s ease;
+}
+
+.stcm-button-secondary:hover {
+  opacity: 0.8;
+}
+
+/* Dismiss (X) button */
+.stcm-banner-dismiss {
+  background: none;
+  border: none;
+  color: var(--textColor);
+  cursor: pointer;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  flex-shrink: 0;
+  border-radius: 4px;
+  transition: opacity 0.15s ease;
+}
+
+.stcm-banner-dismiss:hover {
+  opacity: 1;
+}
+
+.stcm-banner-dismiss:focus-visible {
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 2px;
+}
+
+/* Responsive: stack compact banners on mobile */
+@media (max-width: 599px) {
+  .stcm-compact-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stcm-compact-text {
+    min-width: 0;
+  }
+
+  .stcm-actions-inline {
+    justify-content: stretch;
+    flex-wrap: wrap;
+  }
+
+  .stcm-actions-inline .stcm-button {
+    flex: 1;
+    text-align: center;
+  }
+
+  #stcm-banner.stcm-banner-soft,
+  #stcm-banner.stcm-banner-ca-optout {
+    padding: 14px 16px;
   }
 }

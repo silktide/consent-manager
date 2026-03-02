@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consent Manager Dev</title>
+  <script type="module" src="/src/index.js"></script>
+</head>
+<body>
+  <h1>Silktide Consent Manager — Dev</h1>
+  <p>The consent manager should appear below.</p>
+  <p><a href="#" data-stcm-privacy-link>Privacy Choices</a></p>
+
+  <script type="module">
+    silktideConsentManager.init({
+      consentMode: 'SOFT-OPTIN',
+      prompt: { position: 'bottomCenter' },
+      icon: { position: 'bottomLeft' },
+      backdrop: { show: true },
+      debug: true,
+      consentTypes: [
+        {
+          id: 'necessary',
+          name: 'Necessary',
+          label: 'Necessary',
+          description: '<p>Required for the site to function.</p>',
+          required: true,
+        },
+        {
+          id: 'analytics',
+          name: 'Analytics',
+          label: 'Analytics',
+          description: '<p>Help us understand how visitors use the site.</p>',
+          defaultValue: true,
+          required: false,
+          gtag: 'analytics_storage',
+        },
+        {
+          id: 'advertising',
+          name: 'Advertising',
+          label: 'Advertising',
+          description: '<p>Used for targeted ads.</p>',
+          required: false,
+          gtag: 'ad_storage',
+        },
+      ],
+    });
+  </script>
+</body>
+</html>

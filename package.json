@@ -1,0 +1,51 @@
+{
+  "name": "@silktide/consent-manager",
+  "version": "2.1.0",
+  "description": "A free, lightweight and customizable consent manager for websites, designed to help you comply with GDPR and other privacy regulations.",
+  "type": "module",
+  "main": "dist/silktide-consent-manager.umd.cjs",
+  "module": "dist/silktide-consent-manager.js",
+  "exports": {
+    ".": {
+      "import": "./dist/silktide-consent-manager.js",
+      "require": "./dist/silktide-consent-manager.umd.cjs"
+    },
+    "./dist/silktide-consent-manager.css": "./dist/silktide-consent-manager.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.{js,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,css}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silktide/consent-manager.git"
+  },
+  "keywords": [
+    "consent",
+    "cookie",
+    "gdpr",
+    "privacy",
+    "banner"
+  ],
+  "author": "Silktide",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silktide/consent-manager/issues"
+  },
+  "homepage": "https://github.com/silktide/consent-manager#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
+    "vite": "^7.3.1"
+  }
+}
